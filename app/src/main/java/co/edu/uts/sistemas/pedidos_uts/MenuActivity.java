@@ -2,9 +2,11 @@ package co.edu.uts.sistemas.pedidos_uts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -12,13 +14,35 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+
         String nombre = getIntent().getStringExtra("nombre");
         String apellido = getIntent().getStringExtra("apellido");
-        int edad = getIntent().getIntExtra("edad", -1);
-        if (nombre!=null && apellido!=null && edad!=-1) {
+        String edad = getIntent().getStringExtra("edad");
+
+        if (nombre!=null && apellido!=null) {
             TextView lbSaludo = findViewById(R.id.textView);
             lbSaludo.append("\n"+nombre+" "+apellido+"\n"+edad);
         }
+        /*
+        try {
+
+            int edad = getIntent().getExtras().getInt("edad", 3);
+
+            if (nombre!=null && apellido!=null) {
+                TextView lbSaludo = findViewById(R.id.textView);
+                lbSaludo.append("\n"+nombre+" "+apellido+"\n"+edad);
+            }
+
+        } catch(Exception e) {
+            
+            Toast.makeText(getApplicationContext(), "ERROR: el valor de tipo String contiene caracteres no numéricos!!!", Toast.LENGTH_SHORT).show();
+            
+        }
+        */
+        /*getIntent().getExtras().getInt("edad", -1)*/
+
+
     }
 
     public void ejecutar(View view) {
@@ -26,6 +50,10 @@ public class MenuActivity extends AppCompatActivity {
             finish();
         } else {
             // Llamar a la actividad ProductoActivity
+            if (view.getId()==R.id.btnDatos){
+                Intent datos = new Intent(this, ProductoActivity.class);
+                startActivity(datos);
+            }
         }
     }
 
@@ -38,5 +66,6 @@ public class MenuActivity extends AppCompatActivity {
     EditText, los agrega a un intent y hace el llamado a MenuActivity
     enviandole el intent en la petición
      */
+
 
 }
