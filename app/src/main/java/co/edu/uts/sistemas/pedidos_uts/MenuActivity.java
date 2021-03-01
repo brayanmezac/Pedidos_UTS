@@ -51,8 +51,10 @@ public class MenuActivity extends AppCompatActivity {
         } else {
             // Llamar a la actividad ProductoActivity
             if (view.getId()==R.id.btnDatos){
+
                 Intent datos = new Intent(this, ProductoActivity.class);
                 startActivity(datos);
+
             }
         }
     }
