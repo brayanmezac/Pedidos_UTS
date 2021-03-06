@@ -63,7 +63,11 @@ public class MainActivity extends AppCompatActivity {
         if (Informacion.user.equals(txtUser) && Informacion.passws.equals(txtClave)) {
             Toast.makeText(this, "Usuario/Contraseña validos!!!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+            intent.putExtra("nombre", "Freddy");
+            intent.putExtra("apellido", "Mendez");
+            intent.putExtra("edad", 42);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "Usuario/Contraseña NO SON validos!!!", Toast.LENGTH_SHORT).show();
         }

@@ -8,50 +8,41 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ProductoActivity extends AppCompatActivity {
+import co.edu.uts.sistemas.pedidos_uts.model.Producto;
 
-    EditText nombre, apellido, edad;
+public class ProductoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_producto);
-
-
-
-        nombre = (EditText)findViewById(R.id.nombre);
-        apellido = (EditText)findViewById(R.id.apellido);
-        edad = (EditText)findViewById(R.id.edad);
-
-
     }
 
-    public void enviar(View view){
-         Intent menu = new Intent(this, MenuActivity.class);
-
-         menu.putExtra("nombre", nombre.getText().toString());
-         menu.putExtra("apellido", apellido.getText().toString());
-         menu.putExtra("edad", edad.getText().toString());
-
-        startActivity(menu);
+    public void volver(View view) {
+        setResult(RESULT_CANCELED);
+        finish();
     }
 
-   /* public void ingresar(View view) {
-        EditText user = findViewById(R.id.txtUser);
-        EditText clave = findViewById(R.id.txtClave);
+    public void enviar(View view) {
+        EditText cod = findViewById(R.id.txtCodigo);
+        EditText nom = findViewById(R.id.txtNombre);
+        EditText precio = findViewById(R.id.txtPrecio);
 
-        String txtUser = user.getText().toString();
-        String txtClave = clave.getText().toString();
+        String txtCodigo = cod.getText().toString();
+        String txtNombre = nom.getText().toString();
+        String txtPrecio = precio.getText().toString();
 
-        if (Informacion.user.equals(txtUser) && Informacion.passws.equals(txtClave)) {
-            Toast.makeText(this, "Usuario/Contraseña validos!!!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-            intent.putExtra("nombre", "Freddy");
-            intent.putExtra("apellido", "Mendez");
-            intent.putExtra("edad", 42);
-            startActivity(intent);
+        if (txtNombre.length()>0 && txtCodigo.length()>0 && txtPrecio.length()>0
+           && !Informacion.existeProducto(txtCodigo)) {
+            int precio_ = Integer.parseInt(txtPrecio);
+
+            Informacion.productos.add(new Producto(txtCodigo, txtNombre, precio_));
+            setResult(RESULT_OK);
+            finish();
+            //startActivity(intent);
         } else {
-            Toast.makeText(getApplicationContext(), "Usuario/Contraseña NO SON validos!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Todos los datos son obligatorios", Toast.LENGTH_SHORT).show();
+            setResult(RESULT_CANCELED);
         }
-    }*/
+    }
 }
