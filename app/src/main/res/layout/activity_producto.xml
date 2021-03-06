@@ -1,75 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ProductoActivity">
 
-    <EditText
-        android:id="@+id/nombre"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:ems="10"
-        android:hint="Escriba el nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Codigo Producto" />
 
     <EditText
-        android:id="@+id/apellido"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtCodigo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="Escriba el apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/nombre"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/nombre"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Producto" />
 
     <EditText
-        android:id="@+id/edad"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:ems="10"
-        android:hint="Escriba la edad"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/apellido"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/apellido"
-        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+        android:inputType="textPersonName" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/lbPrecio"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        android:text="Precio Producto" />
 
-    <Button
-        android:id="@+id/enviar"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/txtPrecio"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
-        android:onClick="enviar"
-        android:text="enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:ems="10"
+        android:inputType="number" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="enviar"
+            android:layout_weight="1"
+            android:text="Guardar" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="volver"
+            android:text="Volver" />
+    </LinearLayout>
+</LinearLayout>
