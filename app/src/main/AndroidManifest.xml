@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pedidos_UTS">
-        <activity android:name=".VerProductoActivity"></activity>
+        <activity android:name=".VerClienteActivity"></activity>
+        <activity android:name=".ListarClientesActivity" />
+        <activity android:name=".ClienteActivity" />
+        <activity android:name=".VerProductoActivity" />
         <activity android:name=".ListarProductosActivity" />
         <activity android:name=".ProductoActivity" />
         <activity android:name=".MenuActivity" />

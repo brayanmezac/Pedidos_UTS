@@ -16,6 +16,7 @@
         android:textColor="@color/teal_200"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnDatos"
         app:layout_constraintStart_toStartOf="@+id/btnDatos"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,23 +24,38 @@
         android:id="@+id/btnDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="5dp"
         android:onClick="ejecutar"
         android:text="Agregar Producto"
         app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="12dp"
         android:onClick="ejecutar"
         android:text="Mostrar Productos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnAddClientes"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/btnAddClientes"
         app:layout_constraintTop_toBottomOf="@+id/btnDatos" />
+
+    <Button
+        android:id="@+id/btnAddClientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="ejecutar"
+        android:text="Agregar Cliente"
+        app:layout_constraintEnd_toEndOf="@+id/btnViewClientes"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="@+id/btnViewClientes"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/btnSalirMenu"
@@ -49,27 +65,20 @@
         android:text="Salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnViewClientes"
+        app:layout_constraintVertical_bias="0.421" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnViewClientes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Agregar Cliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
+        android:onClick="ejecutar"
         android:text="Mostrar Clientes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintEnd_toEndOf="@+id/btnSalirMenu"
+        app:layout_constraintStart_toStartOf="@+id/btnSalirMenu"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddClientes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

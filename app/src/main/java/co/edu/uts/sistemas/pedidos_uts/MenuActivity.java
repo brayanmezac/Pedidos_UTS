@@ -15,9 +15,11 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         String nombre = getIntent().getStringExtra("nombre");
         String apellido = getIntent().getStringExtra("apellido");
         int edad = getIntent().getIntExtra("edad", -1);
+
         if (nombre!=null && apellido!=null && edad!=-1) {
             TextView lbSaludo = findViewById(R.id.textView);
             lbSaludo.append("\n"+nombre+" "+apellido+"\n"+edad);
@@ -43,13 +45,24 @@ public class MenuActivity extends AppCompatActivity {
             // Llamar a la actividad ProductoActivity
             Intent intent = new Intent(MenuActivity.this, ProductoActivity.class);
             //startActivity(intent);
-            // code 100 Agregar    btnDatos
-            // code 130 Listar     button3
+            /*
+                code 100 Agregar productos   btnDatos
+                code 130 Listar productos    button3
+                code 160 Agregar clientes      btnAddClientes
+                code 190 listar clientes       btnViewClientes
+            */
             startActivityForResult(intent, 100);
         } else if (view.getId()==R.id.button3) {
             Intent intent = new Intent(MenuActivity.this, ListarProductosActivity.class);
             startActivityForResult(intent, 130);
+        } else if (view.getId()==R.id.btnAddClientes) {
+            Intent intent = new Intent(MenuActivity.this, ListarClientesActivity.class);
+            startActivityForResult(intent, 160);
+        } else if (view.getId()==R.id.btnViewClientes) {
+            Intent intent = new Intent(MenuActivity.this, ClienteActivity.class);
+            startActivityForResult(intent, 190);
         }
+
     }
 
     @Override
