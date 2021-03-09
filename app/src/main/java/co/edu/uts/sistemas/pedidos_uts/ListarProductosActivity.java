@@ -30,7 +30,7 @@ public class ListarProductosActivity extends AppCompatActivity {
                     //Toast.makeText(ListarProductosActivity.this, "Posicion:"+i, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ListarProductosActivity.this, VerProductoActivity.class);
                     intent.putExtra("posicion",i);
-                    startActivityForResult(intent, 110);
+                        startActivityForResult(intent, 110);
                 }
             });
             actualizarLista();

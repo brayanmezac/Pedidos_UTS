@@ -21,15 +21,7 @@ public class VerClienteActivity extends AppCompatActivity {
         cliente=Informacion.clientes.get(posicion);
         verInformacionCliente();
     }
-    public void eliminar(View view) {
-        Informacion.clientes.remove(posicion);
-        setResult(RESULT_OK);
-        finish();
-    }
-    public void volver(View view) {
-        setResult(RESULT_CANCELED);
-        finish();
-    }
+
     private void verInformacionCliente() {
         EditText doc = findViewById(R.id.txtDocumentoCliente);
         EditText nom = findViewById(R.id.txtNombreCliente);
@@ -43,6 +35,18 @@ public class VerClienteActivity extends AppCompatActivity {
         tel.setText(cliente.getCelular());
         email.setText(cliente.getEmail());
     }
+
+    public void eliminar(View view) {
+        Informacion.clientes.remove(posicion);
+        setResult(RESULT_OK);
+        finish();
+    }
+
+    public void volver(View view) {
+        setResult(RESULT_CANCELED);
+        finish();
+    }
+
     public void enviar(View view) {
         EditText doc = findViewById(R.id.txtDocumentoCliente);
         EditText nom = findViewById(R.id.txtNombreCliente);
