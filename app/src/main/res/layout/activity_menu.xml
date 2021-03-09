@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:onClick="ejecutar"
-        android:text="Agregar Cliente"
+        android:text="MOSTRAR CLIENTES"
         app:layout_constraintEnd_toEndOf="@+id/btnViewClientes"
         app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="@+id/btnViewClientes"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:onClick="ejecutar"
-        android:text="Mostrar Clientes"
+        android:text="Agregar Cliente"
         app:layout_constraintEnd_toEndOf="@+id/btnSalirMenu"
         app:layout_constraintStart_toStartOf="@+id/btnSalirMenu"
         app:layout_constraintTop_toBottomOf="@+id/btnAddClientes" />

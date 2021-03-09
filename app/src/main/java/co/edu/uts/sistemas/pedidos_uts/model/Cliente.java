@@ -65,12 +65,11 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "documento=" + documento +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", email='" + email + '\'' +
-                ", celular=" + celular +
-                '}';
+        return  "Cliente:" +
+                "\ndocumento= " + documento +
+                "\nnombre= " + nombre +
+                "\ndireccion= " + direccion+
+                "\nemail= " + email +
+                "\ncelular= " + celular;
     }
 }

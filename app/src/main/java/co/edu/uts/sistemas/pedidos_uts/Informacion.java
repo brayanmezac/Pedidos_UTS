@@ -67,4 +67,5 @@ public class Informacion {
         Cliente cliente = new Cliente(010101,"brayan mezac", "dir","example@email.com",312332);
         clientes.add(cliente);
     }
+
 }

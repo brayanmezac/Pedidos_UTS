@@ -30,6 +30,10 @@ public class MenuActivity extends AppCompatActivity {
             Informacion.cargarProductos();
             mostrarCantidadProductos();
         }
+        if (Informacion.clientes.size()==0) {
+            Informacion.cargarClientes();
+            //mostrarCantidadClientes();
+        }
     }
 
     private void mostrarCantidadProductos() {
